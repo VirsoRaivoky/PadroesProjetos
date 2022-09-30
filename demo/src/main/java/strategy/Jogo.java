@@ -5,6 +5,7 @@ public class Jogo {
     private String nomeJogo;
     private double preco;
     private double desconto;
+   
 
     public Jogo(String nomeJogo, double preco, double desconto) {
         this.nomeJogo = nomeJogo;
@@ -23,5 +24,7 @@ public class Jogo {
     public double getDesconto() {
         return this.desconto;
     }
+
+
 
 }
