@@ -1,18 +1,19 @@
 package State;
 
-public class SOff extends State {
-  public SOff(Produto produto) {
+public class SGratis extends State {
+  public SGratis(Produto produto) {
     super(produto);
   }
 
   @Override
   public String _ColocarD() {
-    produto.setState(new SPromo(produto));
-    return produto.Promo();
+    return produto.Gratis();
   }
 
   @Override
   public String _RemoverPromo() {
+    produto.setState(new SOff(produto));
     return produto.Disponivel();
   }
+
 }

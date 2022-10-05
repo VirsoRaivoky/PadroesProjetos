@@ -1,6 +1,5 @@
 package State;
 
-import java.lang.Thread.State;
 
 public class Produto {
 
@@ -14,16 +13,24 @@ public class Produto {
     this.state = state;
   }
 
-  public String Indisponivel() {
-    return "Este produto não está disponivel no momento";
+  public String Gratis() {
+    return "Este produto Está Gratuito! Aproveite!";
   }
 
   public String Disponivel() {
-    return "O jogo já está disponivel! Aproveite!";
+    return "O jogo já está disponivel, mas sem nenhum desconto :(";
   }
 
   public String Promo() {
     return "O jogo está em promoção!";
+  }
+
+  public String ColocarD() {
+    return state._ColocarD();
+  }
+
+  public String RemoverP() {
+    return state._RemoverPromo();
   }
 
 }
