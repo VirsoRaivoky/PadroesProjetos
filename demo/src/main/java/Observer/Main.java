@@ -1,19 +1,31 @@
 package Observer;
 
 public class Main {
-  
-  public static void main(String[] args){
-    Jogo jogo = new Jogo("Ultrakill");
 
-    Lista lista = new Lista();
+  public static void main(String[] args) {
 
-    jogo.addObserver(lista);
+    Usuario user = new Usuario("Wilson");
     
-    jogo.gratis();
-    jogo.indisponivel();
-    jogo.semPromo();
-    jogo.promo();
+    Jogo j1 = new Jogo("Ultrakill");
+    Jogo j2 = new Jogo("God Of War");
+    Jogo j3 = new Jogo("Terraria");
+    Jogo j4 = new Jogo("Bloodstained");
+    Jogo j5 = new Jogo("Hellblade");
 
-    jogo.notifyObserver(lista, "SP");
+    user.addJogo(j1);
+    user.addJogo(j2);
+    user.addJogo(j3);
+    user.addJogo(j4);
+    user.addJogo(j5);
+
+    user.removerJogo(j4);
+
+    j1.AddLista(user);
+    j2.AddLista(user);
+    j3.AddLista(user);
+    j4.AddLista(user);
+    j5.AddLista(user);
+
+    user.att();
   }
 }

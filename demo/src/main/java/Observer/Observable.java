@@ -1,8 +1,7 @@
 package Observer;
 
-public class Observable {
-    public void setUpdate(){}
-    public void addObserver(Observer observer){}
-    public void notifyObserver(Observer observer, String state){
-}
+public interface Observable {
+    public void addJogo(Jogo j);
+    public void removerJogo(Jogo j);
+    public void notifyJogo();
 }

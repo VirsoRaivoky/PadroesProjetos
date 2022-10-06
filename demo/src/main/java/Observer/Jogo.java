@@ -1,47 +1,18 @@
 package Observer;
 
-public class Jogo extends Observable implements ListaJogos {
+public class Jogo implements Observer {
+  private String nome;
 
-  private String state;
-  public String nome;
-  public Lista lista;
-  public Observer observer;
-  
   public Jogo(String nome) {
+    super();
     this.nome = nome;
   }
 
-  public void semPromo() {
-    state = "SP";
-    System.out.println(nome + " não está com nenhuma oferta");
-    this.setState();
+  public void update() {
+    System.out.println("O jogo: " + nome + ", Entrou em promoção!");
   }
 
-  public String getState() {
-    return state;
-  }
-
-  public void promo() {
-    state = "P";
-    System.out.println(nome + " Está com um desconto");
-    this.setState();
-  }
-
-  public void indisponivel() {
-    state = "ND";
-    System.out.println(nome + " Está indisponivel no momento");
-    this.setState();
-  }
-
-  public void gratis() {
-    state = "G";
-    System.out.println(nome + " está gratuito por um periodo limitado! Corra antes que a promoção acabe!");
-    this.setState();
-  }
-
-  public void setState() {
-    setUpdate();
-    notifyObserver(observer, state);
+  public void AddLista(Usuario lj) {
   }
 
   public String getNome() {
